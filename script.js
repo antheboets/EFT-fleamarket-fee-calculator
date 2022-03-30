@@ -2,7 +2,6 @@ import logic from './tarkovLogic.js';
 
 //const data =[{name:"abc"},{name:"aaa"},{name:"cde"},{name:"abb"}];
 
-const data = null;
 const getData = async () =>{
     data = await fetch("data.json").then(res =>{
         if(!res.ok){
@@ -13,7 +12,7 @@ const getData = async () =>{
         return json;
     });
 }
-getData();
+const data = getData();
 
 const ul = document.getElementById("itemUl");
 
