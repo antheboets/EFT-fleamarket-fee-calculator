@@ -1,15 +1,19 @@
 import logic from './tarkovLogic.js';
 
-const data =[{name:"abc"},{name:"aaa"},{name:"cde"},{name:"abb"}];
+//const data =[{name:"abc"},{name:"aaa"},{name:"cde"},{name:"abb"}];
 
-fetch("data.json").then(res =>{
-    if(!res.ok){
-        throw new Error("HTTP error " + res.status);
-    }
-    return res.json();
-}).then(json =>{
-    console.log(json)
-});
+const data = null;
+const getData = async () =>{
+    data = await fetch("data.json").then(res =>{
+        if(!res.ok){
+            throw new Error("HTTP error " + res.status);
+        }
+        return res.json();
+    }).then(json =>{
+        return json;
+    });
+}
+getData();
 
 const ul = document.getElementById("itemUl");
 
