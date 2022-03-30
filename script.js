@@ -37,5 +37,6 @@ const itemSelect = (e,item) =>{
 }
 
 
+console.log(logic.calFee(0,0,{BaseValue:1},1));
 
 document.getElementById("itemInput").addEventListener("input",(e)=>{search(e,document.getElementById("itemInput").value)});
