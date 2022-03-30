@@ -1,4 +1,4 @@
-import logic from './script.mjs';
+import logic from './tarkovLogic.mjs';
 
 const data =[{name:"abc"},{name:"aaa"},{name:"cde"},{name:"abb"}];
 
