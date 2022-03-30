@@ -3,7 +3,7 @@ import logic from './tarkovLogic.js';
 //const data =[{name:"abc"},{name:"aaa"},{name:"cde"},{name:"abb"}];
 
 const getData = async () =>{
-    data = await fetch("data.json").then(res =>{
+    return await fetch("data.json").then(res =>{
         if(!res.ok){
             throw new Error("HTTP error " + res.status);
         }
