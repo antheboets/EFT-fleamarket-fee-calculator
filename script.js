@@ -25,6 +25,7 @@ const removeChilds = (parent) => {
 
 const fuzzySearch = (text)=>{
     let foundData = [];
+    console.log(data);
     for(let i = 0; i < data.length;i++){
         if(data[i].shortName.toLowerCase().includes(text.toLowerCase())){
             foundData.push(data[i]);
@@ -34,6 +35,7 @@ const fuzzySearch = (text)=>{
 }
 
 const search = (e,text) =>{
+    
     const resultData = fuzzySearch(text);
     removeChilds(document.getElementById("itemUl"));
     for(let i = 0; i < resultData.length;i++){
@@ -46,7 +48,7 @@ const search = (e,text) =>{
 
 const itemSelect = (e,item) =>{
     console.log(item);
-    
+
 }
 
 
