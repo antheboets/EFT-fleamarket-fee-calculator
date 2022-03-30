@@ -1,4 +1,4 @@
-import logic from './script.js';
+import logic from './script.mjs';
 
 const data =[{name:"abc"},{name:"aaa"},{name:"cde"},{name:"abb"}];
 

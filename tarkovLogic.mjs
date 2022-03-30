@@ -36,19 +36,20 @@ export function calFee(IntelCenterLvl = 0, Hideoutmanagement = 0, item,fleaPrice
         return (int)Math.Round(baseFee - ((baseFee * comission) / 100));
     }
     */
-    const commission = 1;
+    const comission = 1;
     let baseFee;
+    let Count = 0;
     if (fleaPrice >= item.BaseValue)
     {
-        baseFee = (item.BaseValue * TaxConstant * Math.Pow(4, Math.Log10(item.BaseValue / fleaPrice)) * Count) + (fleaPrice * TaxConstant * Math.Pow(4, Math.Pow(Math.Log10(fleaPrice / item.BaseValue), LogTaxConstant)) * Count);
+        baseFee = (item.BaseValue * TaxConstant * Math.pow(4, Math.log10(item.BaseValue / fleaPrice)) * Count) + (fleaPrice * TaxConstant * Math.pow(4, Math.pow(Math.log10(fleaPrice / item.BaseValue), LogTaxConstant)) * Count);
     }
     else
     {
-        baseFee = (item.BaseValue * TaxConstant * Math.Pow(4, Math.Pow(Math.Log10(item.BaseValue / fleaPrice), LogTaxConstant)) * Count) + (fleaPrice * TaxConstant * Math.Pow(4, Math.Log10(fleaPrice / item.BaseValue)) * Count);
+        baseFee = (item.BaseValue * TaxConstant * Math.pow(4, Math.pow(Math.log10(item.BaseValue / fleaPrice), LogTaxConstant)) * Count) + (fleaPrice * TaxConstant * Math.pow(4, Math.log10(fleaPrice / item.BaseValue)) * Count);
     }
-    return Math.Round(baseFee - ((baseFee * comission) / 100));
+    return Math.round(baseFee - ((baseFee * comission) / 100));
 }
 
-calFee(0,0,{BaseValue:1},1)
+//calFee(0,0,{BaseValue:1},1)
 
-export default logic;
+export default calFee;
