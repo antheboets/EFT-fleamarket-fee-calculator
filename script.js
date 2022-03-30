@@ -2,6 +2,15 @@ import logic from './tarkovLogic.js';
 
 const data =[{name:"abc"},{name:"aaa"},{name:"cde"},{name:"abb"}];
 
+fetch("data.json").then(res =>{
+    if(!res.ok){
+        throw new Error("HTTP error " + res.status);
+    }
+    return res.json();
+}).then(json =>{
+    console.log(json)
+});
+
 const ul = document.getElementById("itemUl");
 
 const removeChilds = (parent) => {
@@ -37,6 +46,6 @@ const itemSelect = (e,item) =>{
 }
 
 
-console.log(logic.calFee(0,0,{BaseValue:1},1));
+//console.log(logic.calFee(0,0,{BaseValue:1},1));
 
 document.getElementById("itemInput").addEventListener("input",(e)=>{search(e,document.getElementById("itemInput").value)});
