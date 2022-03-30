@@ -26,7 +26,7 @@ const removeChilds = (parent) => {
 const fuzzySearch = (text)=>{
     let foundData = [];
     for(let i = 0; i < data.length;i++){
-        if(data[i].name.toLowerCase().includes(text.toLowerCase())){
+        if(data[i].shortName.toLowerCase().includes(text.toLowerCase())){
             foundData.push(data[i]);
         }
     }
@@ -38,7 +38,7 @@ const search = (e,text) =>{
     removeChilds(document.getElementById("itemUl"));
     for(let i = 0; i < resultData.length;i++){
         let li = document.createElement("li");
-        li.appendChild(document.createTextNode(resultData[i].name));
+        li.appendChild(document.createTextNode(resultData[i].shortName));
         li.onclick = (e) => {itemSelect(e,resultData[i])};
         ul.appendChild(li);
     }
@@ -46,9 +46,8 @@ const search = (e,text) =>{
 
 const itemSelect = (e,item) =>{
     console.log(item);
+    
 }
 
-
-//console.log(logic.calFee(0,0,{BaseValue:1},1));
 
 document.getElementById("itemInput").addEventListener("input",(e)=>{search(e,document.getElementById("itemInput").value)});
