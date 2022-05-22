@@ -12,7 +12,8 @@ const getData = async () =>{
         return json;
     });
 }
-const data = getData();
+
+const data = await getData();
 
 const ul = document.getElementById("itemUl");
 
